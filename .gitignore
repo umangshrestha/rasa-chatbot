@@ -3,3 +3,4 @@ src/results/
 venv/
 __pycache__/
 *.pyc
+.rasa
