@@ -10,6 +10,19 @@ intents:
   - bot_challenge
   - ask_meaning_of_life
   - ask_current_time
+  - inform_birthyear
+  - ask_age
+
+entities:
+  - year
+
+slots:
+  year:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: year
 
 responses:
   utter_greet:
@@ -34,6 +47,14 @@ responses:
   utter_meaning_of_life:
     - text: "The meaning of life is 42."
 
+  utter_ask_birth_year:
+    - text: "I don't know your birth year. Please tell me when you were born."
+
+  utter_ack_birth_year:
+    - text: "Thanks! I've saved your birth year."
+
+  utter_age:
+    - text: "You are {age} years old."
 
 session_config:
   session_expiration_time: 60
@@ -41,3 +62,5 @@ session_config:
 
 actions:
   - action_ask_time
+  - action_store_birthyear
+  - action_calculate_age

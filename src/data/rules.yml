@@ -11,3 +11,13 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Save birth year
+  steps:
+    - intent: inform_birthyear
+    - action: action_store_birthyear
+
+- rule: Respond with age
+  steps:
+    - intent: ask_age
+    - action: action_calculate_age

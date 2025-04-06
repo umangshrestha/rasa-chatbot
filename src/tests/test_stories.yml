@@ -90,9 +90,21 @@ stories:
     intent: goodbye
   - action: utter_goodbye
 
-- story: bot challenge
+- story: ask age
   steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  - intent: ask_age
+    user: |-
+      what is my age
+  - action: action_calculate_age
+  - intent: inform_birthyear
+    user: |-
+      I was born in [2012](year)
+  - slot_was_set:
+    - year: '2012'
+  - action: action_store_birthyear
+  - slot_was_set:
+    - year: '2012'
+  - intent: ask_age
+    user: |-
+      What is my age
+  - action: action_calculate_age

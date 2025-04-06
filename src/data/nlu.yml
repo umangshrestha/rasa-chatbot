@@ -101,14 +101,16 @@ nlu:
     - Tell me the current time
     - What is the time now?
 
-- intent: provide_birth_year
+- intent: inform_birthyear
   examples: |
-    - My birth year is [1990](birth_year)
-    - I was born in [1985](birth_year)
-    - [2000](birth_year) is my birth year
+    - I was born in [1990](year)
+    - My birth year is [2002](year)
+    - Born in [2000](year)
+    - I came into this world in [1995](year)
 
-- intent: request_age
+- intent: ask_age
   examples: |
     - How old am I?
-    - What's my age?
-    - Can you tell me my age?
+    - Tell me my age
+    - What is my age?
+    - Can you calculate my age?
